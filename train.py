@@ -157,7 +157,7 @@ def main():
         state = safe_model.state_dict()
         torch.save(state, './models/' + args.dataset + '/' + str(t) + '.pth')
 
-    ind_ = np.argmin(np.array(loss_record["safe"]))
+    ind_ = np.argmax(np.array(records["safe"][0]))
     print('ACC = {:.4f} NMI = {:.4f} PUR = {:.4f}'.format(records["safe"][0][ind_],
                                                         records["safe"][1][ind_],
                                                         records["safe"][3][ind_]))
